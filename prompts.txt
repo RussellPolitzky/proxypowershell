@@ -1,0 +1,25 @@
+# Proxy PowerShell Script Requirements
+
+## 1. Core Functionality
+Generate a PowerShell script that defines a function to set up proxy details for the current PowerShell session.
+The function must set the following environment variables:
+- `HTTP_PROXY="http://username:password@proxy.abc.co.za:8080"`
+- `HTTPS_PROXY="http://username:password@proxy.abc.co.za:8080"`
+
+After the function is called, these environment variables must be available in the PowerShell session for use by any application (such as `uv`) expecting to see them.
+
+## 2. User Input & Security
+- When the user calls the function, she must be prompted to enter the username and password.
+- The username and password must be URL encoded down to the proxy URL strings to handle special characters correctly.
+- To avoid security issues, the username and password must **not** be saved anywhere on disk or in persistent paths.
+
+## 3. Configuration & Parameters
+- The user should be able to override the default proxy server (`proxy.abc.co.za`) and port (`8080`) by passing the proxy server details as parameters to the function.
+
+## 4. Testing & Documentation
+- Test the final code by using an open proxy.
+- The PowerShell script should include full instructions (e.g., as comments or a README) on how to load and use it.
+
+## 5. Deployment
+- Once tested, push the script to my GitHub repository located at:
+  https://github.com/RussellPolitzky/proxypowershell.git
