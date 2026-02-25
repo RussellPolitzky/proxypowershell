@@ -31,7 +31,7 @@
     Prompts for credentials and sets proxy to the specified custom server and port.
 
 .NOTES
-    Author: Russell Politzky
+    Author: Russell Politzky, Antigravity
 #>
 function Set-SessionProxy {
     [CmdletBinding()]
