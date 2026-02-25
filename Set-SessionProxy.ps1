@@ -54,11 +54,6 @@ function Set-SessionProxy {
         return
     }
 
-    # Ensure any domain prefix like 'DOMAIN\' is removed if users inadvertently type one
-    if ($username -match "\\") {
-        $username = $username.Split('\')[-1]
-    }
-
     $password = [System.Runtime.InteropServices.Marshal]::PtrToStringAuto([System.Runtime.InteropServices.Marshal]::SecureStringToBSTR($securePassword))
 
 
